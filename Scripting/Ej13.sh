@@ -7,6 +7,7 @@ echo "Para buscar información, escriba Buscar"
 echo "Para visualizar el archivo, escriba Listar"
 echo "Para ordenar de manera alfabeticamente, escriba Ordenar"
 echo "Para borrar el archivo, escriba Borrar"
+echo " "
 
 touch lista1.txt
 
@@ -22,13 +23,18 @@ case $nombre in
       echo "$nom $direc $telf" >> lista1.txt
       ;;
    Buscar)
-      
+      read -p "Que quiere buscar? " cosa
+      grep $cosa lista1.txt
       ;;
    Listar)
-      cat lista.txt
+      cat lista1.txt
       ;;
    Ordenar)
-      sort -h lista.txt
+      sort -h lista1.txt
+      ;;
+   Borrar)
+      rm -rf lista1.txt
+      echo "Se ha borrado correctamente"
       ;;
    *)
       echo "Petición no encontrada"
