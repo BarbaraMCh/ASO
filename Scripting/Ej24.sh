@@ -19,18 +19,14 @@ contador1=0
 contador2=0
 #Contador x
 contador=0
-#total
-total=$((contador1 + contador2 + contador))
 
 for i in $(ls -a "$1"); do
    if [[ -f $1$i ]]; then
 	#archivo
       ((contador1++))
    elif [[ -d $1$i ]]; then
-      tipo=archivo
       ((contador2++))
    else 
-      tipo=desconocido
       ((contador++))
    fi
 done
@@ -38,4 +34,5 @@ done
 echo "Nº Archivos = $contador1"
 echo "Nº Directorios = $contador2"
 echo "Nº sin conocimiento = $contador"
+total=$((contador1+contador2+contador))
 echo "Nº total = $total"

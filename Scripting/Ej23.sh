@@ -40,4 +40,3 @@ done
 
 echo "Numero total de entrada: $contador"
 
-#No entiendo el ultimo punto del ejercicio.
